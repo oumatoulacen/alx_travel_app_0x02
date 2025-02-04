@@ -1,0 +1,22 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+*.swo
+*.bak
+*.orig
+*.log
+
+# Django
+*.db
+*.sqlite3
+*.sqlite
+*.pot
+db.sqlite3
+*.mo
+*.py[cod]
+*.so
+.env
+**/migrations/*.py
