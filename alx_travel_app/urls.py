@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('api/', include('alx_travel_app.listings.urls')),  # Include listings app URLs
+    path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),  # Include Django Rest Framework URLs
 ]
