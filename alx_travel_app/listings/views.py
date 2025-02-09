@@ -46,8 +46,8 @@ class BookingViewSet(viewsets.ModelViewSet):
         headers = {"Authorization": f"Bearer {settings.CHAPA_SECRET_KEY}"}
         chapa_url = "https://api.chapa.co/v1/transaction/initialize"
         response = requests.post(chapa_url, json=payment_data, headers=headers)
-        print("verify_payment", f"http://127.0.0.1:8000/api/payment/verify/{transaction_id}/")
         if response.status_code == 200:
+            print("follow up payment", response.json().get("data").get("checkout_url"))
             Payment.objects.create(
                 booking=booking,
                 transaction_id=transaction_id,
